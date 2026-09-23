@@ -29,6 +29,11 @@ def main():
     print(f"Dial setting (our guess): {guess:.2f} in")
     print(f"Average dollars lost:    ${cost:.2f} per guess")
 
+    # Sanity check: a working dial always ends up somewhere between the
+    # shortest and tallest person. If not, something is wrong with it.
+    if not heights.min() <= guess <= heights.max():
+        print("WARNING: dial setting is outside the range of the data; the dial may be broken.")
+
     OUT.mkdir(exist_ok=True)
     fig, ax = plt.subplots(figsize=(8, 4))
     ax.hist(heights, bins=np.arange(np.floor(heights.min()), np.ceil(heights.max()) + 1, 1.0))
