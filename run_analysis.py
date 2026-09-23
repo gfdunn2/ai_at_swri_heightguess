@@ -25,6 +25,7 @@ def main():
     print(f"Participants:            {len(df)}")
     print(f"Shortest person:         {heights.min():.1f} in")
     print(f"Tallest person:          {heights.max():.1f} in")
+    print(f"Converted from cm:       {df['converted_from_cm'].sum()} heights")
     print(f"Dial setting (our guess): {guess:.2f} in")
     print(f"Average dollars lost:    ${cost:.2f} per guess")
 
