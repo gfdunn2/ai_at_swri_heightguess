@@ -27,7 +27,7 @@ def tune_dial(heights, start=60.0, first_turn=2.0, passes=3, seed=0):
             turn = first_turn / np.sqrt(step)
             too_high = guess > h
             if too_high:
-                guess -= turn
-            else:
                 guess += turn
+            else:
+                guess -= turn
     return guess
